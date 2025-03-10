@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href = "img/dice.png"/>
+</head>
+<body>
+    <header>
+        <p id="title">BINGO</p>
+    </header>
+    <main>
+        <div  id = "left-table"><table>
+            <tr>
+                <td ><p class="leaf1 smaller" >NRP</p></td>
+                <td rowspan="2"><p  class = "smaller" id ="leaf2">:2472027 - <br>Yosua <br>Juswandi<br>putra</p></td>
+            </tr>
+            <tr>
+                <td><p class = "leaf1 smaller">Nama</p></td>
+            </tr>
+            <tr>
+                <td rowspan="2" ><p id="matakuliah" class = "smaller">Mata<br> Kuliah</p></td>
+                <td><p id = "webdas"class = "smaller" >:Web Dasar <br>Praktikum<br> 4</p></td>
+            </tr>
+            <tr>
+                <td><p id = "tanggal" class = "smaller">Senin, <br>10-03-2025</p></td>
+            </tr>
+        </table> 
+        </div>
+        <div class="teks-tengah">
+            <div ><p ><b>BINGO BOARD<br></b><br>Bingo Board is a game which players mark off numbers on cards as teh numbers are drawn randomly<br> by a caller, the winner being the first person to mark off five numbers in a row or another required<br> pattern</p></div>
+            <p class="start-btn" >START</p>
+        </div>
+        <div >
+            <table class = "scoreboard">
+                <tr>
+                    <td id = "score-txt"><b >Scoreboard</b></td>
+                    <td id = "score-btn">2000</td>
+                </tr>
+            </table>
+        </div>
+        <div >
+            <table id = "bingo-table">
+                <tr  >
+                    <td >
+                        <p class="bingo orange">B</p>
+                    </td>
+                    <td>
+                        <p class="bingo green">I</p>
+                    </td>
+                    <td>
+                        <p class="bingo blue">N</p>
+                    </td>
+                    <td>
+                        <p class="bingo yellow">G</p>
+                    </td>
+                    <td>
+                        <p class="bingo bisque">O</p>
+                    </td>
+                </tr>
+                <tr >
+                    <td>
+                        <p class="bingo-normal green">21</p>
+                    </td>
+                    <td>
+                        <p class = "bingo-num blue">26</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal yellow">37</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal bisque">44</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal orange">58</p>
+                    </td>
+                </tr>
+                <tr >
+                    <td>
+                        <p class="bingo-normal blue">26</p>
+                    </td>
+                    <td>
+                        <p class = "bingo-num yellow">73</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal bisque" >88</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal orange" >49</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal green">180</p>
+                    </td>
+                </tr>
+                <tr >
+                    <td>
+                        <p class="bingo-normal yellow">56</p>
+                    </td>
+                    <td>
+                        <p class = "bingo-num bisque">47</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal orange">74</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal green" >17</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal blue" >15</p>
+                    </td>
+                </tr>
+                <tr >
+                    <td>
+                        <p class="bingo-normal bisque">96</p>
+                    </td>
+                    <td>
+                        <p class = "bingo-num orange">I</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal green">41</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal blue">99</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal yellow">68</p>
+                    </td>
+                </tr>
+                <tr >
+                    <td>
+                        <p class="bingo-normal orange">58</p>
+                    </td>
+                    <td>
+                        <p class = "bingo-num green">20</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal blue">11</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal yellow">66</p>
+                    </td>
+                    <td>
+                        <p class="bingo-normal bisque">77</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id = "leaderboard">
+                <b>Leaderboard</b>
+                <ol id="husni">
+                    <li>Husni</li>
+                    <li>Herno</li>
+                    <li>Ulmi</li>
+                    <li>...</li>
+                </ol>
+                <ol id = "mehong" type = "I" start = "98">
+                    <li>Comeng</li>
+                    <li>Moheng</li>
+                    <li>Mihong</li>
+                    <li>Mehong</li>
+                    <li>Gonjreng</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wisman</li></ol>
+        </div>
+    </main>
+    <footer>
+        <div>
+        <hr/>
+        Copyright &copy; 2025 - 2472027<br>Powered by <font>W3Schools</font><br><font>https://github.com/YosuaJP/Praktikum.git</font>
+        <hr/>
+        </div>
+    </footer>
+</body>
+</html>

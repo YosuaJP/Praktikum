@@ -1,0 +1,28 @@
+
+.title-page{
+    background-color:#00a3a8;  
+    margin-bottom:20px;
+}
+.paragraph{
+    border:4px solid #00a3a8  ;
+    border-radius:20px;
+    padding:20px;
+    margin-bottom: 20px;
+}
+.judul{
+    color:#00a3a8;
+    font-size:20px;
+}
+.container{
+    padding: 20px 30px 20px 30px;   
+    margin-bottom: 30px;
+    max-width:1000px;
+    margin:auto;
+}
+#isi{
+    max-width:1000px;
+    margin:auto
+}
+.list{
+    margin-left:100px;
+}

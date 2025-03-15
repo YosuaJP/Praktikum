@@ -1,0 +1,108 @@
+html{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior:smooth;
+}
+.navigation{
+    background-color: #333;
+    width:100%; 
+  }
+td a {
+    display: block;
+    color: white;
+    padding: 2rem 14rem;
+    text-decoration: none;
+    cursor:crosshair;
+}
+td a:hover {
+    background-color: #7289DA;
+}
+.magenta{
+    background-color:#D9EEE1;
+    width: 100%;
+}
+.vanilla{
+    background-color:#FFF4A3;
+    width: 100%;
+}
+.cream{
+    background-color:#F3ECEA;
+    width: 100%;
+}
+.title{
+    font-size: 60px;
+    margin-bottom:20px;
+}
+button.green{
+    border-radius: 25px;
+    border-color:#04A66D;
+    background-color:#04A66D;
+    color:white;
+    font-weight:800;
+    font-size: 0.8rem;
+    width : 250px;
+    height: 43px;
+    padding:11px 60px;
+    border: none;
+    margin-bottom:20px;
+}
+button.black{
+    border-radius: 25px;
+    background-color:black;
+    color:white;
+    font-weight:800;
+    font-size: 0.6rem;
+    width : 250px;
+    height: 43px;
+    padding:11px 60px;
+    border: none;
+    margin-bottom:20px;
+}
+button.pink{
+    border-radius: 25px;
+    background-color: #FFC0C7;
+    color:black;
+    font-weight:800;
+    font-size: 0.9rem;
+    width : 250px;
+    height: 43px;
+    padding:11px 60px;
+    border: none;
+}
+.trybutton{
+    border-radius: 25px;
+    border-color:#04A66D;
+    background-color:#04A66D;
+    color:white;
+    font-weight:550;
+    font-size: 12px;
+    padding:10px 25px;
+    border: none;
+    text-decoration: none;
+}
+.outer-box{
+    background-color:#38444D;
+    color:white;
+    padding:20px 20px 20px 20px;
+    margin:60px 200px 60px 100px;  
+    border-radius:7px;
+
+}
+
+.text-box{
+    font-family: 'Courier New', Courier, monospacel;
+    background-color:#15202B;
+    color:#7289DA;
+    padding:0.625rem;
+    margin:1.25rem 0rem;
+    
+}
+.left-content{
+    padding:30px 50px 30px 270px;
+    text-align:center;
+    margin:auto;
+    width:500px;
+    max-width:90%;
+}
+.thelanguage{
+    font-size:0.9rem;
+}

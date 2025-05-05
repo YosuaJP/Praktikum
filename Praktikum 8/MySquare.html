@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align:center;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+        #isi {
+            color:white;
+            margin:auto;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+    </style>
+</head>
+<body>
+    <div class = "main">
+        <h3><b>Persegi buatanmu</b></h3>
+        <div id = "isi"></div>
+        <p>&copy; 2472027 - Yosua Juswandiputra</p>
+</div>
+    
+    <script>
+
+        border = prompt("Border persegi (misal 1): ")
+        tinggi = prompt("Tinggi persegi (px): ")
+        lebar = prompt ("Lebar persegi (px): ")
+        warna = prompt("Warna persegi (misal: red, blue, #00ff00): ")
+        ngisi = prompt("Isi persegi (misal: Hello World): ")
+        let divIsi = document.getElementById("isi");
+        divIsi.style.backgroundColor = warna;
+        divIsi.style.border = border+"px solid black";
+        divIsi.innerHTML = ngisi;
+        divIsi.style.width = lebar+"px";
+        divIsi.style.height = tinggi+ "px";
+    </script>
+</body>
+</html>

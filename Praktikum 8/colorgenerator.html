@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #container{
+            width:100vw;
+            height:100vw;
+            text-align:center;
+            display:flex;
+
+        }
+        #boxtengah{
+            background-color:white;
+            width:200px;
+            height:auto;
+            border-radius:5px;
+            margin:auto;
+            padding:0px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "container">
+        <div id = "boxtengah">
+            <p><b>Color Generator</b></p>
+            <button onclick = "generator()">Generate</button>
+            <p id ="hasil"></p>
+        </div>
+    </div>
+    <script>
+        
+        function generator(){
+            let letters = '0123456789ABCDEF';
+            let color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            let divIsi = document.getElementById("container");
+            divIsi.style.backgroundColor = color;
+            document.getElementById("hasil").innerHTML = color
+                };
+    
+    </script>
+</body>
+</html>

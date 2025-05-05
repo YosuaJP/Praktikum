@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #e3f2fd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .quiz-container {
+      background-color: white;
+      padding: 30px 50px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #result, #datetime {
+      margin-top: 20px;;
+    }
+  </style>
+  <script src ="script.js"></script>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Welcome to the Math Quiz!</h1>
+    <p>Click the button below to start solving random math problems. Type "exit" or press cancel to stop.</p>
+    <button onclick="startQuiz()">Start Practicing</button>
+    <div id="result"></div>
+    <div id="datetime"></div>
+  </div>
+
+</body>
+</html>

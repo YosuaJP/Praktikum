@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <link rel="stylesheet" href="Hangman.css">
+</head>
+<body>
+  <div class = "left-side">
+    <img id="gambar" src="img/10.jpg" alt="Hangman Image">
+    <b><p>Lives: <span id="nyawaText">10</span></p></b>
+  </div>
+  <div class ="right-side">
+  
+  <div id="displayJawaban"></div>
+  <p id="clueText"></p>
+
+  <input type="text" id="inputLetter" maxlength="1" />
+  <button id="tebakBtn">Tebak</button>
+
+  <div id="msg"></div>
+</div>
+  <script>
+    let answers = ["PYTHON", "JAVASCRIPT", "TAILWIND", "REACT", "LARAVEL"];
+    let clues = [
+    "A versatile programming language named after a snake, loved for its simplicity.",
+    "The language that brings interactivity to websites, often abbreviated as JS.",
+    "A utility-first CSS framework for rapidly building custom designs.",
+    "A JavaScript library for building dynamic user interfaces, created by Facebook.",
+    "A PHP framework known for elegant syntax and robust web development tools.",
+    ];
+
+    let answer = "";
+    let jawabanGaris = "";
+    let nyawa = 10;
+
+    function generate() {
+      let index = Math.floor(Math.random() * answers.length);
+      answer = answers[index];
+      jawabanGaris = "_".repeat(answer.length);
+      nyawa = 10;
+
+      document.getElementById("clueText").textContent = clues[index];
+      document.getElementById("displayJawaban").textContent = jawabanGaris.split("").join(" ");
+      document.getElementById("nyawaText").textContent = nyawa;
+      document.getElementById("msg").textContent = "";
+      document.getElementById("inputLetter").value = "";
+      document.getElementById("gambar").src = "img/10.jpg";
+    }
+
+    function checkAnswer() {
+      let input = document.getElementById("inputLetter");
+      let letter = input.value.toUpperCase();
+      input.value = "";
+
+      if (letter === "" || jawabanGaris.indexOf(letter) !== -1) {
+        return;
+      }
+
+      let found = false;
+      let temp = jawabanGaris.split("");
+
+      for (let i = 0; i < answer.length; i++) {
+        if (answer[i] === letter) {
+          temp[i] = letter;
+          found = true;
+        }
+      }
+
+      if (!found) {
+        nyawa--;
+        document.getElementById("nyawaText").textContent = nyawa;
+        document.getElementById("gambar").src = "img/" + nyawa + ".jpg";
+      }
+
+      jawabanGaris = temp.join("");
+      document.getElementById("displayJawaban").textContent = jawabanGaris.split("").join(" ");
+      checkWin();
+    }
+
+    function checkWin() {
+      if (jawabanGaris === answer) {
+        document.getElementById("msg").textContent = "Kamu Menang!";
+        msg.style.color="green"
+      } else if (nyawa <= 0) {
+        document.getElementById("msg").textContent =  "Kamu Kalah!";  
+        msg.style.color="red"
+      }
+    }
+
+    // Event listener
+    document.getElementById("tebakBtn").addEventListener("click", checkAnswer);
+
+    // Load 
+    window.onload = generate;
+  </script>
+</body>
+</html>

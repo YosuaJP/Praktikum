@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="MyTodoList.css">
+</head>
+<body>
+  <div class="container">
+    <div class ="keterangan"><h2>My To-Do List</h2>
+    <button class="add-btn" onclick="tambahList()">Tambah +</button>
+</div>
+    <div class = "isi">
+        <div class="todo-list" id="todoList"></div>
+    </div>
+    <p>&copy; 2472027 - Yosua Juswandiputra</p>
+  </div>
+
+  <script>
+    function tambahList() {
+      let kegiatan = prompt("Apa yang ingin kamu lakukan?");
+      if (kegiatan) {
+        let list = document.querySelector("#todoList");
+        let item = document.createElement("li");
+        list.appendChild(item);
+        item.textContent = kegiatan;
+        item.addEventListener("click", () => {
+          let konfirmasi = confirm("Sudah mengerjakan tugas ini?");
+          if (konfirmasi) {
+            item.style.textDecoration = "line-through";
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

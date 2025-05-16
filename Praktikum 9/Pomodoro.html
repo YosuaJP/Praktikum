@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <link rel="stylesheet" href="Pomodoro.css">
+</head>
+<body>
+
+  <h3>Pomodoro</h3>
+  <div class="container">
+    <div>
+      <button class="special" id="pomodoroBtn">Pomodoro</button>
+      <button class="special" id="shortBtn">Short Break</button>
+    </div>
+
+    <div id="timer">25:00</div>
+    <button id="startBtn">Start</button>
+  </div>
+
+  <p id="modeText">Focus Pocus !!</p>
+
+  <script>
+    let mode = "pomodoro";
+    let seconds = 1500;
+    let timer;
+    let isRunning = false;
+    let i = 0;
+
+    function update() {
+      let m = Math.floor(seconds / 60);
+      let s = seconds % 60;
+
+      let menit;
+      let detik;
+
+      if (m < 10) {
+        menit = "0" + m;
+      } else {
+        menit = m;
+      }
+
+      if (s < 10) {
+        detik = "0" + s;
+      } else {
+        detik = s;
+      }
+
+      document.getElementById("timer").textContent = menit + ":" + detik;
+    }
+
+    function modeGame(newMode) {
+      mode = newMode;
+
+      if (mode === "pomodoro") {
+        seconds = 1500;
+        document.body.style.backgroundColor = "#894682";
+        document.getElementById("modeText").textContent = "Focus Pocus !!";
+      } else {
+        seconds = 300;
+        document.body.style.backgroundColor = "#4988BB";
+        document.getElementById("modeText").textContent = "Rest Time";
+      }
+
+      // Reset warna tombol mode
+      let buttons = document.querySelectorAll(".special");
+      buttons.forEach(function(btn) {
+        btn.style.backgroundColor = document.body.style.backgroundColor;
+      });
+
+      // Berhentiin kalo mencet start/reset
+      if (isRunning) {
+        clearInterval(timer);
+        isRunning = false;
+        document.getElementById("startBtn").textContent = "Start";
+      }
+
+      update();
+    }
+
+    function startReset() {
+      if (!isRunning) {
+        i = 0; // reset hitungan
+        timer = setInterval(function() {
+          seconds--;
+          i++;
+          console.log(i); 
+
+          update();
+
+          if (seconds <= 0 || i === 1500) {
+            clearInterval(timer);
+            alert("Time's Up!");
+            isRunning = false;
+            document.getElementById("startBtn").textContent = "Start";
+          }
+        }, 1000);
+
+        isRunning = true;
+        document.getElementById("startBtn").textContent = "Reset";
+      } else {
+        clearInterval(timer);
+        isRunning = false;
+        document.getElementById("startBtn").textContent = "Start";
+        modeGame(mode); // reset sesuai mode
+      }
+    }
+
+    // Event listeners 
+    document.getElementById("pomodoroBtn").addEventListener("click", function() {
+      modeGame("pomodoro");
+    });
+
+    document.getElementById("shortBtn").addEventListener("click", function() {
+      modeGame("short");
+    });
+
+    document.getElementById("startBtn").addEventListener("click", startReset);
+
+    // Inisialisasi 
+    update();
+  </script>
+</body>
+</html>

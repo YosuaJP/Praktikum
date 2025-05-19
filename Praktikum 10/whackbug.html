@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #F0F2F5;
+      text-align: center;
+      overflow:hidden;
+    }
+    .container{
+        display:inline-block;
+        margin-top:90vh;
+    }
+    #scoreboard {
+      font-size: 15px;
+    }
+    #timeboard{
+     font-size: 15px;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    #game-over {
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+    <div class = "container">
+        <div id="timeboard">Time Left: 15</div>
+        <div id = "scoreboard">Score: 0</div>
+    </div>
+  
+    <div id="game-over"></div>
+
+  <script>
+    $(document).ready(function () {
+      let score = 0;
+      let sisaWaktu = 15;
+      let gameInterval;
+
+      function spawnBug() {
+        let bug = $('<img src="bug.jpg" alt="">');
+
+        let maxWidth = $(window).width() ;
+        let maxHeight = $(window).height() ;
+        let left = Math.random() * maxWidth;
+        let top = Math.random() * maxHeight;
+
+        bug.css({
+          left: left + 'px',top: top + 'px'
+        });
+
+        $('body').append(bug);
+
+        // bug hilang setelah 1.5 detik kalau ga diklik
+        setTimeout(function () {
+          bug.remove();
+        }, 1500);
+
+        bug.click(function () {
+          score++;
+          $('#timeboard').text("Time Left: " + sisaWaktu);
+          $('#scoreboard').text(' Score: ' + score );
+          bug.remove();
+        });
+      }
+
+      function updateTimer() {
+        sisaWaktu--;
+        $('#timeboard').text("Time Left: " + sisaWaktu);
+        $('#scoreboard').text(' Score: ' + score );
+
+        if (sisaWaktu <= 0) {
+          clearInterval(gameInterval);
+          $('img').remove(); // hapus semua bug yang ada
+          $("body").css("background-color","black")
+          $('#game-over').text('Final Score: ' + score);
+            $('#game-over').css({
+            "color": "white",
+            "position": "absolute",
+            "top": "40%",
+            "left": "45%",
+            });
+            
+        }
+      }
+
+      // timer berkurang 
+      gameInterval = setInterval(function () {
+        spawnBug();
+        updateTimer();
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>

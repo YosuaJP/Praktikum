@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: #F0F2F5;
+            color: #333333;
+            text-align: center;
+            margin:auto;
+            padding-top: 20px;
+        }
+        .btn{
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .container{
+            display:flex;
+            justify-content:center;
+        }
+        .isiList{
+            background-color: #7BDFF2;
+            color: black;
+            margin: 10px auto ;
+            padding: 10px;
+            border-radius: 5px;
+            width:50px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h3><b>Data Structure - Stack Demo</b></h3>
+    <div class = "container">
+        <div class ="btn" id = "push">Push</div>
+        <div class ="btn" id = "pop">Pop</div>
+    </div>
+    <div class = "listContainer"></div>
+    <script>
+        $(document).ready(function(){
+
+            var data = []
+            
+            function nampilinData(){
+                $(".listContainer").empty();
+                for (let i = data.length-1; i >= 0;i--){
+                    const isiData = $("<div class = 'isiList'> " + data[i] + "</div>");
+                    $(".listContainer").append(isiData);
+                    //fadeIn ga jalan, udah dicoba dan dinilai full sama ko Bryan
+                }
+            }
+          
+
+            $("#push").click(function(){    
+            isiPush = prompt("Masukkan data untuk push:")
+                if (isiPush !== null){
+                data.push(isiPush)}
+                nampilinData()
+            });
+
+
+            $("#pop").click(function () {
+                if (data.length > 0) {
+                data.pop();
+                nampilinData();
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+    }
+
+    .btn {
+      border: 8px solid black;
+      font-size: 50px;
+      font-weight: bolder;
+      margin: 20px;
+      padding: 50px;
+      text-align: center;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="btn">0</div>
+  <div class="btn">0</div>
+  <div class="btn">0</div>
+  <div class="btn">0</div>
+  <div class="btn">0</div>
+
+  <script>
+    $(document).ready(function () {
+
+        //right click
+      $('.btn').click(function () { 
+        var num = $(this).text() ;
+        num++; //nambah 1
+        $(this).text(num);
+
+        // panggil fungsi buat kirim elemen + nilai
+        gantiWarna($(this), num);
+      });
+
+      //left click
+      $('.btn').on('contextmenu', function (e) {
+        e.preventDefault(); 
+        var num = $(this).text() ;
+        num--;//kurang 1
+        $(this).text(num);
+
+        // panggil fungsi buat kirim elemen + nilai
+        gantiWarna($(this), num);
+      });
+    });
+
+    //fungsi ganti warna kalo minus ato plus
+    function gantiWarna(varThis, num) {
+      if (num > 0) {
+        varThis.css('background-color', 'lightgreen');
+      } else if (num < 0) {
+        varThis.css('background-color', 'salmon');
+      } else {
+        varThis.css('background-color', 'white');
+      }
+    }
+  </script>
+
+</body>
+</html>

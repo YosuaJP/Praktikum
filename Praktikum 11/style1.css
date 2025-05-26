@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f4f4f4 60%, #e0e7ff 100%);
+  min-height: 100vh;
+}
+
+.area-header {
+  height: 350px;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('img/cinema.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.judul-cinema {
+  color: #ffffff;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+#tombol {
+  background-color: #1b9c85;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display:flex;
+  margin:50px auto;
+}
+
+.kotak {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.kartu {
+  background-color: white;
+  border-radius: 15px;
+  width: 220px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.kartu img {
+  width: 100%;
+  border-radius: 15px;
+  height: 300px;
+  object-fit: cover;
+}
+.showingText{
+  color:#ffe066;
+  margin-top:20px;
+  font-size:22px;
+}
+
+
+.kartu p {
+  color: #1b9c85;
+  font-weight:bolder;
+}
+.judul-now {
+  font-size: 2em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+button{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+footer{
+  background-color:#2d3142;
+  color:white;
+  text-align:center;
+  height:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}

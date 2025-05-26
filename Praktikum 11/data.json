@@ -1,0 +1,32 @@
+[
+  {
+    "gambar": "img/espresso.jpg",
+    "judul": "Espresso",
+    "detail": "Kopi hitam pekat dengan rasa yang strong dan rich.",
+    "harga": "Rp 18.000"
+  },
+  {
+    "gambar": "img/cappucino.jpg",
+    "judul": "Cappucino",
+    "detail": "Perpaduan espresso, susu panas, dan foam yang lembut.",
+    "harga": "Rp 25.000"
+  },
+  {
+    "gambar": "img/latte.jpg",
+    "judul": "Latte",
+    "detail": "Espresso dengan banyak susu, rasa yang lebih ringan",
+    "harga": "Rp 24.000"
+  },
+  {
+    "gambar": "img/coldbrew.jpg",
+    "judul": "Cold Brew",
+    "detail": "Kopi diseduh dingin selama 12 jam, rasanya halus dan ringan.",
+    "harga": "Rp 28.000"
+  },
+  {
+    "gambar": "img/americano.jpg",
+    "judul": "Americano",
+    "detail": "Espresso dicampur air panas, cita rasa klasik",
+    "harga": "Rp 20.000"
+  }
+]
